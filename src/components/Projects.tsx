@@ -90,76 +90,73 @@ export const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={project.id}
-                className={`grid lg:grid-cols-2 gap-8 items-center ${
-                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
+                className="relative group"
               >
-                {/* Project Visual */}
                 <div
-                  className={`relative group ${
-                    index % 2 === 1 ? "lg:order-2" : ""
-                  }`}
-                >
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 blur-3xl group-hover:opacity-30 transition-opacity duration-500`}
-                  />
-                  <div className="relative p-8 md:p-12 rounded-2xl bg-gradient-card border border-border group-hover:border-primary/30 transition-all duration-300">
-                    <div
-                      className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center mb-6 shadow-lg`}
-                    >
-                      <project.icon className="w-10 h-10 text-white" />
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      {project.features.map((feature) => (
-                        <div
-                          key={feature.text}
-                          className="flex items-center gap-3 p-3 rounded-lg bg-secondary/30"
-                        >
-                          <feature.icon className="w-4 h-4 text-primary shrink-0" />
-                          <span className="text-sm">{feature.text}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Project Info */}
-                <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
-                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                    <span className="text-xs font-mono text-primary">
-                      {project.status}
-                    </span>
-                  </div>
-
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-primary font-medium mb-4">
-                    {project.tagline}
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 text-xs font-mono rounded-md bg-secondary border border-border"
+                  className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-10 blur-3xl group-hover:opacity-20 transition-opacity duration-500`}
+                />
+                <div className="relative p-6 md:p-8 rounded-2xl bg-gradient-card border border-border group-hover:border-primary/30 transition-all duration-300">
+                  <div className="flex flex-col lg:flex-row gap-6">
+                    {/* Project Icon & Status */}
+                    <div className="flex lg:flex-col items-center lg:items-start gap-4">
+                      <div
+                        className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center shadow-lg shrink-0`}
                       >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                        <project.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
+                      </div>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+                        <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                        <span className="text-xs font-mono text-primary">
+                          {project.status}
+                        </span>
+                      </div>
+                    </div>
 
-                  {/* Actions */}
-                  <div className="flex gap-3">
-                    <Button variant="heroOutline" size="sm" disabled>
-                      <ExternalLink className="w-4 h-4" />
-                      Coming Soon
-                    </Button>
+                    {/* Project Info */}
+                    <div className="flex-1">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-1">
+                        {project.title}
+                      </h3>
+                      <p className="text-primary font-medium mb-3">
+                        {project.tagline}
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        {project.description}
+                      </p>
+
+                      {/* Features - Now inside the card */}
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
+                        {project.features.map((feature) => (
+                          <div
+                            key={feature.text}
+                            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary/30 border border-border/50"
+                          >
+                            <feature.icon className="w-4 h-4 text-primary shrink-0" />
+                            <span className="text-xs md:text-sm">{feature.text}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Tech Stack */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.techStack.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-3 py-1 text-xs font-mono rounded-md bg-secondary border border-border"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Actions */}
+                      <div className="flex gap-3">
+                        <Button variant="heroOutline" size="sm" disabled>
+                          <ExternalLink className="w-4 h-4" />
+                          Coming Soon
+                        </Button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -13,42 +13,22 @@ const skillCategories = [
   {
     title: "Mobile Development",
     icon: Smartphone,
-    skills: [
-      { name: "Kotlin", level: 95 },
-      { name: "Jetpack Compose", level: 90 },
-      { name: "Multi-Module Architecture", level: 85 },
-      { name: "Material Design 3", level: 90 },
-    ],
+    skills: ["Kotlin", "Jetpack Compose", "Multi-Module Architecture", "Material Design 3", "MVVM/MVI"],
   },
   {
     title: "Backend Development",
     icon: Server,
-    skills: [
-      { name: "Node.js", level: 85 },
-      { name: "REST APIs", level: 90 },
-      { name: "JavaScript/TypeScript", level: 85 },
-      { name: "Web Crawling", level: 80 },
-    ],
+    skills: ["Node.js", "REST APIs", "JavaScript/TypeScript", "Web Crawling", "Cloud Functions"],
   },
   {
     title: "Firebase Ecosystem",
     icon: Cloud,
-    skills: [
-      { name: "Authentication", level: 90 },
-      { name: "Firestore", level: 90 },
-      { name: "Cloud Storage", level: 85 },
-      { name: "FCM (Push Notifications)", level: 85 },
-    ],
+    skills: ["Authentication", "Firestore", "Cloud Storage", "FCM (Push Notifications)", "Analytics"],
   },
   {
     title: "Architecture & Patterns",
     icon: Layers,
-    skills: [
-      { name: "MVVM/MVI", level: 90 },
-      { name: "Clean Architecture", level: 85 },
-      { name: "Dependency Injection", level: 85 },
-      { name: "Repository Pattern", level: 90 },
-    ],
+    skills: ["Clean Architecture", "Dependency Injection", "Repository Pattern", "Coroutines & Flow", "Unit & UI Testing"],
   },
 ];
 
@@ -91,37 +71,26 @@ export const Skills = () => {
 
           {/* Skills Grid */}
           <div className="grid md:grid-cols-2 gap-6 mb-16">
-            {skillCategories.map((category, categoryIndex) => (
+            {skillCategories.map((category) => (
               <div
                 key={category.title}
                 className="p-6 rounded-2xl bg-gradient-card border border-border hover:border-primary/30 transition-all duration-300"
               >
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                     <category.icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-semibold text-lg">{category.title}</h3>
                 </div>
 
-                <div className="space-y-4">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-medium">{skill.name}</span>
-                        <span className="text-xs text-muted-foreground font-mono">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-primary rounded-full transition-all duration-1000 ease-out"
-                          style={{
-                            width: `${skill.level}%`,
-                            animationDelay: `${categoryIndex * 0.1 + skillIndex * 0.05}s`,
-                          }}
-                        />
-                      </div>
-                    </div>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 text-sm font-medium rounded-lg bg-secondary/50 border border-border hover:border-primary hover:text-primary transition-all duration-300"
+                    >
+                      {skill}
+                    </span>
                   ))}
                 </div>
               </div>
