@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, ArrowDown, Smartphone, Server } from "lucide-react";
+import { Github, Linkedin, ArrowDown, Smartphone, Server, FileText } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
@@ -55,12 +56,22 @@ export const Hero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 animate-slide-up" style={{ animationDelay: "0.4s" }}>
             <Button variant="hero" size="xl" asChild>
               <a href="#projects">View My Work</a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
               <a href="#contact">Get In Touch</a>
+            </Button>
+          </div>
+
+          {/* Resume Button */}
+          <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.45s" }}>
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/resume" className="flex items-center gap-2">
+                <FileText className="w-4 h-4" />
+                Download Resume
+              </Link>
             </Button>
           </div>
 
