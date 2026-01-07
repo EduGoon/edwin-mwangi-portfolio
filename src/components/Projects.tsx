@@ -49,7 +49,7 @@ const projects = [
       { icon: MapPin, text: "Location-based discovery" },
       { icon: Globe, text: "Web crawling engine" },
       { icon: Smartphone, text: "Intuitive mobile UI" },
-      { icon: Server, text: "REST API backend" },
+      { icon: Server, text: "Backend API" },
     ],
     techStack: [
       "Kotlin",
@@ -79,7 +79,7 @@ export const Projects = () => {
               What I've <span className="text-gradient">Built</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Full-stack mobile applications designed with scalability in mind,
+              Mobile applications and backend systems designed with scalability and maintainability in mind,
               from concept to production-ready code.
             </p>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mt-6" />
@@ -173,6 +173,7 @@ export const Projects = () => {
                 href="https://github.com/EduGoon"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex items-center gap-1"
               >
                 <Github className="w-4 h-4" />
                 View GitHub Profile
