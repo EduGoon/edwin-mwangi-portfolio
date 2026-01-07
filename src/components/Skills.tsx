@@ -1,54 +1,64 @@
 import { 
   Smartphone, 
   Server, 
-  Database, 
   Cloud, 
-  TestTube, 
   Layers,
-  Code2,
-  Zap
+  Code2
 } from "lucide-react";
 
 const skillCategories = [
   {
     title: "Mobile Development",
     icon: Smartphone,
-    skills: ["Kotlin", "Jetpack Compose", "Multi-Module Architecture", "Material Design 3", "MVVM/MVI"],
+    skills: [
+      "Kotlin",
+      "Jetpack Compose",
+      "XML",
+      "Material Design 3",
+      "MVVM/MVI",
+      "Responsive Design",
+      "Android Studio",
+      "Gradle",
+      "Google Play Services"
+    ],
   },
   {
     title: "Backend Development",
     icon: Server,
-    skills: ["Node.js", "REST APIs", "JavaScript/TypeScript", "Web Crawling", "Cloud Functions"],
+    skills: [
+      "Node.js",
+      "RESTful APIs",
+      "JavaScript/TypeScript",
+      "Web Crawling",
+      "Cloud Functions",
+      "Cloud Run",
+      "Server-side Architecture"
+    ],
   },
   {
-    title: "Firebase Ecosystem",
+    title: "Firebase & Cloud",
     icon: Cloud,
-    skills: ["Authentication", "Firestore", "Cloud Storage", "FCM (Push Notifications)", "Analytics"],
+    skills: [
+      "Authentication",
+      "Firestore",
+      "Cloud Storage",
+      "FCM (Push Notifications)",
+      "Analytics",
+      "Google OAuth"
+    ],
   },
   {
     title: "Architecture & Patterns",
     icon: Layers,
-    skills: ["Clean Architecture", "Dependency Injection", "Repository Pattern", "Coroutines & Flow", "Unit & UI Testing"],
+    skills: [
+      "Multi-Module Architecture",
+      "Dependency Injection (Hilt/Dagger)",
+      "Repository Pattern",
+      "Coroutines & Flow",
+      "Unit Testing",
+      "UI Testing"
+    ],
   },
-];
-
-const techStack = [
-  { name: "Kotlin", category: "Language" },
-  { name: "JavaScript", category: "Language" },
-  { name: "Jetpack Compose", category: "UI Framework" },
-  { name: "Node.js", category: "Runtime" },
-  { name: "Firebase", category: "BaaS" },
-  { name: "Firestore", category: "Database" },
-  { name: "REST APIs", category: "Integration" },
-  { name: "FCM", category: "Messaging" },
-  { name: "Git", category: "Version Control" },
-  { name: "Material Design", category: "Design System" },
-  { name: "Hilt/Dagger", category: "DI" },
-  { name: "Coroutines", category: "Async" },
-  { name: "Flow", category: "Reactive" },
-  { name: "Unit Testing", category: "Testing" },
-  { name: "UI Testing", category: "Testing" },
-  { name: "Responsive Design", category: "UI/UX" },
 ];
 
 export const Skills = () => {
@@ -63,14 +73,13 @@ export const Skills = () => {
               My <span className="text-gradient">Tech Arsenal</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              A comprehensive toolkit built through hands-on experience developing 
-              production-ready applications that scale.
+              Core skills and technologies I work with, categorized for clarity and separation of concerns.
             </p>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mt-6" />
           </div>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 gap-6">
             {skillCategories.map((category) => (
               <div
                 key={category.title}
@@ -95,26 +104,6 @@ export const Skills = () => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Tech Stack Cloud */}
-          <div className="text-center">
-            <h3 className="text-xl font-semibold mb-8">
-              <Code2 className="w-5 h-5 inline-block mr-2 text-primary" />
-              Technologies I Work With
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {techStack.map((tech) => (
-                <div
-                  key={tech.name}
-                  className="px-4 py-2 rounded-lg bg-secondary/50 border border-border hover:border-primary hover:bg-primary/5 transition-all duration-300 group cursor-default"
-                >
-                  <span className="font-medium text-sm group-hover:text-primary transition-colors">
-                    {tech.name}
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
