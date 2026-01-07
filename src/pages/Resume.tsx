@@ -34,7 +34,7 @@ const Resume = () => {
                 Edwin Mwangi
               </h1>
               <p className="text-xl text-primary print:text-gray-700 font-medium mb-4">
-                Android Engineer & Full-Stack Developer
+                Android Developer & Backend Developer
               </p>
               
               {/* Contact Info */}
@@ -70,10 +70,10 @@ const Resume = () => {
                 Professional Summary
               </h2>
               <p className="text-muted-foreground print:text-gray-700 leading-relaxed">
-                Passionate Android Engineer and Full-Stack Developer with hands-on experience building scalable mobile applications 
-                using Kotlin and Jetpack Compose. Proficient in designing multi-modular codebases, implementing RESTful APIs, 
+                Passionate Android Developer with hands-on experience building scalable mobile applications 
+                using Kotlin and Jetpack Compose. Skilled in designing modular codebases, implementing RESTful APIs, 
                 and integrating Firebase services for authentication, real-time databases, and cloud storage. Committed to 
-                crafting elegant user experiences backed by robust, maintainable backend systems.
+                crafting elegant user experiences supported by robust backend systems.
               </p>
             </section>
 
@@ -86,25 +86,25 @@ const Resume = () => {
                 <div>
                   <h3 className="font-semibold text-foreground print:text-black mb-1">Mobile Development</h3>
                   <p className="text-muted-foreground print:text-gray-700">
-                    Kotlin, Jetpack Compose, Android SDK, Multi-Modular Architecture, Material Design 3, MVVM/MVI
+                    Kotlin, Jetpack Compose, Android SDK, Multi-Modular Architecture, Material Design 3, MVVM/MVI, Responsive UI
                   </p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground print:text-black mb-1">Backend Development</h3>
                   <p className="text-muted-foreground print:text-gray-700">
-                    Node.js, JavaScript, RESTful APIs, Web Crawling, Firebase Cloud Functions
+                    Node.js, JavaScript, RESTful APIs, Web Crawling, Firebase Cloud Functions, Cloud Run, API Design
                   </p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground print:text-black mb-1">Firebase Ecosystem</h3>
                   <p className="text-muted-foreground print:text-gray-700">
-                    Authentication, Firestore, Cloud Storage, FCM (Push Notifications), Analytics
+                    Authentication, Firestore, Cloud Storage, FCM (Push Notifications), Analytics, Cloud Messaging
                   </p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground print:text-black mb-1">Tools & Practices</h3>
                   <p className="text-muted-foreground print:text-gray-700">
-                    Git, Android Studio, Unit Testing, UI Testing, Responsive Design, Agile
+                    Git, Android Studio, Unit Testing, UI Testing, CI/CD, Agile, System Design
                   </p>
                 </div>
               </div>
@@ -190,7 +190,7 @@ const Resume = () => {
                 Interests
               </h2>
               <p className="text-muted-foreground print:text-gray-700 text-sm">
-                Software Engineering • Mobile Computing • System Design • Open Source Contribution • Building Scalable Solutions
+                Software Development • Mobile Computing • System Design • Open Source Contribution • Building Scalable Solutions
               </p>
             </section>
 
