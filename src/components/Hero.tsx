@@ -33,7 +33,7 @@ export const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-slide-up" style={{ animationDelay: "0.1s" }}>
-            Android Engineer & BackEnd Developer
+            Mobile App Developer (Android Native) & BackEnd Developer
           </p>
 
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-up" style={{ animationDelay: "0.2s" }}>
