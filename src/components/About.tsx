@@ -19,7 +19,7 @@ const highlights = [
   {
     icon: GraduationCap,
     title: "Academic Excellence",
-    description: "Pursuing BSc Computer Technology with a passion for software engineering.",
+    description: "Pursuing BSc Computer Technology with a strong passion for building real-world software systems.",
   },
 ];
 
@@ -49,16 +49,15 @@ export const About = () => {
                 creating solutions that make a difference.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                As an <span className="text-foreground font-medium">Android Engineer</span>, I specialize 
+                As an <span className="text-foreground font-medium">Android Developer</span>, I specialize 
                 in building native applications using <span className="text-primary">Kotlin</span> and 
                 <span className="text-primary"> Jetpack Compose</span>, following modern architectural 
                 patterns and multi-modular codebase management for maintainable, scalable apps.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Beyond mobile development, I'm a <span className="text-foreground font-medium">Full-Stack Developer</span> with 
-                expertise in building robust backend systems using Node.js and Firebase ecosystem. 
-                From authentication to real-time databases, I create end-to-end solutions that 
-                deliver exceptional user experiences.
+                Beyond mobile development, I build and maintain <span className="text-foreground font-medium">backend systems</span> 
+                using Node.js and the Firebase ecosystem. I focus on authentication, real-time data, and scalable APIs that 
+                power mobile applications end-to-end.
               </p>
             </div>
 
@@ -85,7 +84,7 @@ export const About = () => {
             {[
               { value: "2+", label: "Apps Built" },
               { value: "3rd", label: "Year Student" },
-              { value: "Full", label: "Stack Developer" },
+              { value: "Backend", label: "Developer" },
               { value: "∞", label: "Learning Hours" },
             ].map((stat) => (
               <div
