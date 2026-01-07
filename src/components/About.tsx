@@ -84,6 +84,7 @@ export const About = () => {
             {[
               { value: "2+", label: "Apps Built" },
               { value: "3rd", label: "Year Student" },
+              { value: "Android App", label: "Developer" },
               { value: "Backend", label: "Developer" },
               { value: "∞", label: "Learning Hours" },
             ].map((stat) => (
