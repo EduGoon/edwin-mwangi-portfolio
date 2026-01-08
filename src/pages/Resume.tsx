@@ -1,223 +1,131 @@
 import { Button } from "@/components/ui/button";
-import { Download, ArrowLeft, Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Download } from "lucide-react";
 
-const Resume = () => {
-  const handleDownload = () => {
-    window.print();
-  };
-
+export const Resume = () => {
   return (
-    <>
-      {/* Screen-only header */}
-      <div className="print:hidden bg-background border-b border-border sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <Link
-            to="/"
-            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Back to Portfolio</span>
-          </Link>
-          <Button onClick={handleDownload} variant="hero" size="default">
-            <Download className="w-4 h-4 mr-2" />
-            Download PDF
-          </Button>
-        </div>
-      </div>
+    <section id="resume" className="py-24 md:py-32 bg-background">
+      <div className="container mx-auto px-6 max-w-4xl">
 
-      {/* Resume Content */}
-      <div className="min-h-screen bg-background print:bg-white print:min-h-0">
-        <div className="container mx-auto px-6 py-12 print:px-0 print:py-0">
-          <div className="max-w-[850px] mx-auto bg-card print:bg-white rounded-xl print:rounded-none shadow-xl print:shadow-none p-8 md:p-12 print:p-8">
+        {/* Header */}
+        <div className="mb-10 text-center print:text-left">
+          <h1 className="text-3xl md:text-4xl font-extrabold mb-2 print:text-black">
+            Edu
+          </h1>
+          <p className="text-muted-foreground print:text-black">
+            Computer Science Student · Mobile & Backend Developer
+          </p>
 
-            {/* Header */}
-            <header className="border-b border-border print:border-gray-300 pb-6 mb-6">
-              <h1 className="text-3xl md:text-4xl font-bold text-foreground print:text-black mb-2">
-                Edwin Mwangi
-              </h1>
-              <p className="text-xl text-primary print:text-gray-700 font-medium mb-4">
-                Mobile Developer • Backend Developer (Attachment / Internship Candidate)
-              </p>
-
-              {/* Contact Info */}
-              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground print:text-gray-600">
-                <a
-                  href="mailto:mwangiedwin131@gmail.com"
-                  className="flex items-center gap-1 hover:text-primary print:text-gray-600"
-                >
-                  <Mail className="w-4 h-4" />
-                  mwangiedwin131@gmail.com
-                </a>
-                <a
-                  href="tel:+254706672014"
-                  className="flex items-center gap-1 hover:text-primary print:text-gray-600"
-                >
-                  <Phone className="w-4 h-4" />
-                  +254 706 672 014
-                </a>
-                <span className="flex items-center gap-1">
-                  <MapPin className="w-4 h-4" />
-                  Kisumu, Kenya
-                </span>
-              </div>
-
-              <div className="flex gap-4 mt-3 text-sm text-muted-foreground print:text-gray-600">
-                <a
-                  href="https://github.com/EduGoon"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 hover:text-primary print:text-gray-600"
-                >
-                  <Github className="w-4 h-4" />
-                  github.com/EduGoon
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/edwin-mwangi-263481270/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 hover:text-primary print:text-gray-600"
-                >
-                  <Linkedin className="w-4 h-4" />
-                  LinkedIn
-                </a>
-              </div>
-            </header>
-
-            {/* Profile / Objective */}
-            <section className="mb-6">
-              <h2 className="text-lg font-bold uppercase tracking-wide border-b border-border print:border-gray-300 pb-2 mb-3">
-                Profile
-              </h2>
-              <p className="text-muted-foreground print:text-gray-700 leading-relaxed">
-                Motivated Computer Science & Technology student and Android-focused software engineer seeking an attachment or internship opportunity.
-                I aim to gain hands-on experience building production-grade applications, working within collaborative engineering teams,
-                and learning industry-standard best practices including clean architecture, testing, documentation, and code reviews.
-                I am particularly interested in environments where scalability, maintainability, and real-world impact matter.
-              </p>
-            </section>
-
-            {/* Technical Skills */}
-            <section className="mb-6">
-              <h2 className="text-lg font-bold uppercase tracking-wide border-b border-border print:border-gray-300 pb-2 mb-3">
-                Technical Skills
-              </h2>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                <div>
-                  <h3 className="font-semibold mb-1">Mobile (Android)</h3>
-                  <p className="text-muted-foreground print:text-gray-700">
-                    Kotlin, Jetpack Compose, Android SDK, Material Design 3, MVVM/MVI,
-                    Multi-Module Architecture, Coroutines & Flow
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold mb-1">Backend & Cloud</h3>
-                  <p className="text-muted-foreground print:text-gray-700">
-                    Node.js, JavaScript, REST APIs, Firebase Cloud Functions,
-                    Firestore, Authentication, Cloud Storage
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold mb-1">Architecture & Engineering Practices</h3>
-                  <p className="text-muted-foreground print:text-gray-700">
-                    Clean Architecture, Repository Pattern, Dependency Injection,
-                    Modularization, Error Handling
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold mb-1">Tools & Workflow</h3>
-                  <p className="text-muted-foreground print:text-gray-700">
-                    Git & GitHub, Android Studio, Gradle, Unit & UI Testing,
-                    Agile Development, Technical Documentation
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* Projects */}
-            <section className="mb-6">
-              <h2 className="text-lg font-bold uppercase tracking-wide border-b border-border print:border-gray-300 pb-2 mb-3">
-                Selected Projects
-              </h2>
-
-              <div className="mb-4">
-                <h3 className="font-semibold">Xplay — Competitive Gaming Platform</h3>
-                <p className="text-sm text-muted-foreground print:text-gray-700 mb-2">
-                  Android application with real-time competition and ranking features.
-                </p>
-                <ul className="list-disc list-inside text-sm text-muted-foreground print:text-gray-700 space-y-1">
-                  <li>Developed a scalable Android app using Kotlin and Jetpack Compose</li>
-                  <li>Applied multi-module architecture for separation of concerns</li>
-                  <li>Integrated Firebase Authentication, Firestore, and FCM</li>
-                  <li>Designed a Node.js backend to support synchronized game data</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="font-semibold">Eventify — Local Events Discovery App</h3>
-                <p className="text-sm text-muted-foreground print:text-gray-700 mb-2">
-                  Mobile application for discovering nearby events using aggregated data sources.
-                </p>
-                <ul className="list-disc list-inside text-sm text-muted-foreground print:text-gray-700 space-y-1">
-                  <li>Built modern Android UI with Jetpack Compose and Material Design 3</li>
-                  <li>Implemented backend services with Node.js and web crawling logic</li>
-                  <li>Used Firebase for authentication, storage, and push notifications</li>
-                </ul>
-              </div>
-            </section>
-
-            {/* Education */}
-            <section className="mb-6">
-              <h2 className="text-lg font-bold uppercase tracking-wide border-b border-border print:border-gray-300 pb-2 mb-3">
-                Education
-              </h2>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="font-semibold">BSc Computer Technology</h3>
-                  <p className="text-muted-foreground print:text-gray-700">
-                    Maseno University — Department of Computer Science
-                  </p>
-                </div>
-                <span className="text-sm text-muted-foreground print:text-gray-600">
-                  2022 — Present
-                </span>
-              </div>
-            </section>
-
-            {/* Interests */}
-            <section>
-              <h2 className="text-lg font-bold uppercase tracking-wide border-b border-border print:border-gray-300 pb-2 mb-3">
-                Professional Interests
-              </h2>
-              <p className="text-sm text-muted-foreground print:text-gray-700">
-                Production-grade mobile systems • Software architecture • Backend scalability •
-                Collaborative engineering • Learning industry best practices
-              </p>
-            </section>
-
+          <div className="mt-4 flex justify-center print:justify-start">
+            <Button
+              variant="outline"
+              className="print:hidden"
+              onClick={() => window.print()}
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Download PDF
+            </Button>
           </div>
         </div>
-      </div>
 
-      {/* Print Styles */}
-      <style>{`
-        @media print {
-          @page {
-            margin: 0.5in;
-            size: A4;
+        {/* Profile */}
+        <div className="mb-8">
+          <h2 className="section-title">Profile</h2>
+          <p className="text-sm leading-relaxed text-foreground print:text-black">
+            Motivated Computer Science student seeking an attachment/internship
+            role to gain hands-on experience in building production-level
+            applications. Passionate about writing clean, maintainable code,
+            collaborating in team environments, learning industry best
+            practices, and contributing to real-world software systems.
+          </p>
+        </div>
+
+        {/* Skills */}
+        <div className="mb-8">
+          <h2 className="section-title">Technical Skills</h2>
+          <ul className="text-sm grid grid-cols-2 gap-y-1 list-disc pl-5 print:text-black">
+            <li>Kotlin & Jetpack Compose</li>
+            <li>Android App Development</li>
+            <li>Node.js & REST APIs</li>
+            <li>Firebase (Auth, Firestore, FCM)</li>
+            <li>Git & GitHub</li>
+            <li>Basic Web Crawling</li>
+          </ul>
+        </div>
+
+        {/* Projects */}
+        <div className="mb-8">
+          <h2 className="section-title">Projects</h2>
+
+          <div className="mb-4">
+            <h3 className="font-bold print:text-black">Xplay</h3>
+            <p className="text-sm text-muted-foreground print:text-black mb-1">
+              Competitive Gaming Community Platform
+            </p>
+            <ul className="text-sm list-disc pl-5 print:text-black">
+              <li>Developed a competitive gaming platform with player rankings and leaderboards</li>
+              <li>Implemented authentication and real-time data using Firebase</li>
+              <li>Focused on scalable architecture and clean UI with Jetpack Compose</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold print:text-black">Eventify</h3>
+            <p className="text-sm text-muted-foreground print:text-black mb-1">
+              Location-Based Events Discovery App
+            </p>
+            <ul className="text-sm list-disc pl-5 print:text-black">
+              <li>Built an event discovery system using web crawling techniques</li>
+              <li>Designed backend APIs to aggregate and serve event data</li>
+              <li>Emphasized modular design and maintainability</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Learning & Interests */}
+        <div className="mb-8">
+          <h2 className="section-title">Learning & Interests</h2>
+          <ul className="text-sm list-disc pl-5 print:text-black">
+            <li>Enterprise-level application architecture</li>
+            <li>Software documentation and best practices</li>
+            <li>Team collaboration and agile workflows</li>
+            <li>Backend scalability and system design</li>
+          </ul>
+        </div>
+
+        {/* Footer */}
+        <div className="text-sm text-muted-foreground print:text-black">
+          <p>GitHub: github.com/EduGoon</p>
+        </div>
+
+        {/* Print-specific styling */}
+        <style>{`
+          @media print {
+            body {
+              background: white;
+            }
+
+            .section-title {
+              color: #000 !important;
+              border-bottom: 2px solid #000;
+            }
           }
-          body {
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-          }
-        }
-      `}</style>
-    </>
+        `}</style>
+      </div>
+    </section>
   );
 };
 
-export default Resume;
+/* Section title utility */
+const sectionTitleClass =
+  "text-lg font-extrabold uppercase tracking-wider text-foreground print:text-black border-b border-border print:border-black pb-2 mb-3";
+
+const sectionTitle = sectionTitleClass;
+
+/* Inject utility class */
+const style = document.createElement("style");
+style.innerHTML = `
+  .section-title {
+    ${sectionTitle.replace(/ /g, ";")}
+  }
+`;
+document.head.appendChild(style);
