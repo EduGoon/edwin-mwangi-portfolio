@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Gamepad2,
-  CalendarDays,
-  Trophy,
-  Users,
-  MapPin,
+import { 
+  Gamepad2, 
+  CalendarDays, 
+  Trophy, 
+  Users, 
+  MapPin, 
   Globe,
   Smartphone,
   Server,
   ExternalLink,
   Github,
   Store,
-  X,
+  X
 } from "lucide-react";
 
 const projects = [
@@ -21,13 +21,13 @@ const projects = [
     title: "Xplay",
     tagline: "Competitive Gaming Community Platform",
     description:
-      "A dynamic gaming community where players can test their skills against each other, track rankings, and compete on leaderboards across multiple games. Built with a focus on real-time updates and scalability.",
+      "A dynamic gaming community where players can test their skills against each other, track their rankings, and compete on leaderboards across multiple games. Built with a focus on real-time updates and seamless multiplayer experiences.",
     icon: Gamepad2,
     gradient: "from-orange-500 to-pink-500",
     features: [
       { icon: Trophy, text: "Real-time leaderboards" },
       { icon: Users, text: "Player matchmaking" },
-      { icon: Smartphone, text: "Native Android app" },
+      { icon: Smartphone, text: "Native Android experience" },
       { icon: Server, text: "Scalable backend" },
     ],
     techStack: [
@@ -39,7 +39,6 @@ const projects = [
       "Node.js",
     ],
     githubUrl: "https://github.com/EduGoon/Xplay",
-    playStoreUrl: "",
     status: "In Development",
   },
   {
@@ -47,13 +46,13 @@ const projects = [
     title: "Eventify",
     tagline: "Discover Events Near You",
     description:
-      "An intelligent events discovery platform that aggregates local events using web crawling. Designed to help users explore what's happening around them through a clean and intuitive mobile experience.",
+      "An intelligent events discovery platform that helps users find exciting events happening in their vicinity. Powered by web crawling technology, Eventify aggregates events from multiple sources to provide a comprehensive local events guide.",
     icon: CalendarDays,
     gradient: "from-cyan-500 to-blue-500",
     features: [
       { icon: MapPin, text: "Location-based discovery" },
       { icon: Globe, text: "Web crawling engine" },
-      { icon: Smartphone, text: "Modern mobile UI" },
+      { icon: Smartphone, text: "Intuitive mobile UI" },
       { icon: Server, text: "Backend API" },
     ],
     techStack: [
@@ -65,7 +64,6 @@ const projects = [
       "Web Crawling",
     ],
     githubUrl: "https://github.com/EduGoon/Eventify",
-    playStoreUrl: "",
     status: "In Development",
   },
 ];
@@ -88,35 +86,34 @@ export const Projects = () => {
               What I've <span className="text-gradient">Built</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Android applications backed by scalable backend systems, built with
-              production-grade architecture and clean code principles.
+              Mobile applications and backend systems designed with scalability and maintainability in mind,
+              from concept to production-ready code.
             </p>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mt-6" />
           </div>
 
           {/* Projects */}
           <div className="space-y-12">
-            {projects.map((project) => (
-              <div key={project.id} className="relative group">
-                {/* Glow */}
+            {projects.map((project, index) => (
+              <div
+                key={project.id}
+                className="relative group"
+              >
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-10 blur-3xl group-hover:opacity-20 transition-opacity duration-500`}
                 />
-
-                {/* Card */}
                 <div 
                   className="relative p-6 md:p-8 rounded-2xl bg-gradient-card border border-border group-hover:border-primary/30 transition-all duration-300 cursor-pointer"
                   onClick={() => setActiveProject(project)}
                 >
                   <div className="flex flex-col lg:flex-row gap-6">
-                    {/* Icon + Status */}
+                    {/* Project Icon & Status */}
                     <div className="flex lg:flex-col items-center lg:items-start gap-4">
                       <div
                         className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center shadow-lg shrink-0`}
                       >
                         <project.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                       </div>
-
                       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
                         <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                         <span className="text-xs font-mono text-primary">
@@ -125,7 +122,7 @@ export const Projects = () => {
                       </div>
                     </div>
 
-                    {/* Info */}
+                    {/* Project Info */}
                     <div className="flex-1">
                       <h3 className="text-2xl md:text-3xl font-bold mb-1">
                         {project.title}
@@ -145,9 +142,7 @@ export const Projects = () => {
                             className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary/30 border border-border/50"
                           >
                             <feature.icon className="w-4 h-4 text-primary shrink-0" />
-                            <span className="text-xs md:text-sm">
-                              {feature.text}
-                            </span>
+                            <span className="text-xs md:text-sm">{feature.text}</span>
                           </div>
                         ))}
                       </div>
@@ -169,7 +164,7 @@ export const Projects = () => {
                   {/* Click indicator */}
                   <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="text-xs text-muted-foreground font-mono">
-                      Click to view →
+                      Click to view links →
                     </span>
                   </div>
                 </div>
@@ -235,10 +230,10 @@ export const Projects = () => {
             ))}
           </div>
 
-          {/* CTA */}
+          {/* More Projects CTA */}
           <div className="text-center mt-16">
             <p className="text-muted-foreground mb-4">
-              More projects coming as I continue building and shipping.
+              More exciting projects in the pipeline!
             </p>
             <Button variant="outline" asChild>
               
