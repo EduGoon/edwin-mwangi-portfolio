@@ -95,13 +95,9 @@ export const Projects = () => {
           {/* Projects */}
           <div className="space-y-12">
             {projects.map((project, index) => (
-              <div
-                key={project.id}
-                className="relative group"
-              >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-10 blur-3xl group-hover:opacity-20 transition-opacity duration-500`}
-                />
+              <div key={project.id} className="relative group">
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-10 blur-3xl group-hover:opacity-20 transition-opacity duration-500`} />
+                
                 <div 
                   className="relative p-6 md:p-8 rounded-2xl bg-gradient-card border border-border group-hover:border-primary/30 transition-all duration-300 cursor-pointer"
                   onClick={() => setActiveProject(project)}
@@ -109,38 +105,25 @@ export const Projects = () => {
                   <div className="flex flex-col lg:flex-row gap-6">
                     {/* Project Icon & Status */}
                     <div className="flex lg:flex-col items-center lg:items-start gap-4">
-                      <div
-                        className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center shadow-lg shrink-0`}
-                      >
+                      <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center shadow-lg shrink-0`}>
                         <project.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                       </div>
                       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
                         <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                        <span className="text-xs font-mono text-primary">
-                          {project.status}
-                        </span>
+                        <span className="text-xs font-mono text-primary">{project.status}</span>
                       </div>
                     </div>
 
                     {/* Project Info */}
                     <div className="flex-1">
-                      <h3 className="text-2xl md:text-3xl font-bold mb-1">
-                        {project.title}
-                      </h3>
-                      <p className="text-primary font-medium mb-3">
-                        {project.tagline}
-                      </p>
-                      <p className="text-muted-foreground leading-relaxed mb-4">
-                        {project.description}
-                      </p>
+                      <h3 className="text-2xl md:text-3xl font-bold mb-1">{project.title}</h3>
+                      <p className="text-primary font-medium mb-3">{project.tagline}</p>
+                      <p className="text-muted-foreground leading-relaxed mb-4">{project.description}</p>
 
                       {/* Features */}
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
                         {project.features.map((feature) => (
-                          <div
-                            key={feature.text}
-                            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary/30 border border-border/50"
-                          >
+                          <div key={feature.text} className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary/30 border border-border/50">
                             <feature.icon className="w-4 h-4 text-primary shrink-0" />
                             <span className="text-xs md:text-sm">{feature.text}</span>
                           </div>
@@ -150,10 +133,7 @@ export const Projects = () => {
                       {/* Tech Stack */}
                       <div className="flex flex-wrap gap-2">
                         {project.techStack.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 text-xs font-mono rounded-md bg-secondary border border-border"
-                          >
+                          <span key={tech} className="px-3 py-1 text-xs font-mono rounded-md bg-secondary border border-border">
                             {tech}
                           </span>
                         ))}
@@ -163,91 +143,65 @@ export const Projects = () => {
 
                   {/* Click indicator */}
                   <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-xs text-muted-foreground font-mono">
-                      Click to view links →
-                    </span>
+                    <span className="text-xs text-muted-foreground font-mono">Click to view links →</span>
                   </div>
                 </div>
-
-                {/* Modal Overlay */}
-                {activeProject?.id === project.id && (
-                  <div 
-                    className="fixed inset-0 z-50 flex items-center justify-center p-4"
-                    onClick={() => setActiveProject(null)}
-                  >
-                    <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
-                    
-                    <div 
-                      className="relative z-10 w-full max-w-md"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <div className={`relative p-8 rounded-3xl bg-gradient-to-br ${project.gradient} shadow-2xl`}>
-                        <button
-                          onClick={() => setActiveProject(null)}
-                          className="absolute top-4 right-4 p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
-                        >
-                          <X className="w-5 h-5 text-white" />
-                        </button>
-
-                        <div className="flex justify-center mb-6">
-                          <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                            <project.icon className="w-10 h-10 text-white" />
-                          </div>
-                        </div>
-
-                        <h3 className="text-3xl font-bold text-white text-center mb-2">
-                          {project.title}
-                        </h3>
-                        <p className="text-white/90 text-center mb-8">
-                          {project.tagline}
-                        </p>
-
-                        <div className="space-y-3">
-                          
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-3 w-full px-6 py-4 rounded-xl bg-white text-gray-900 font-semibold hover:bg-white/90 transition-all transform hover:scale-105 shadow-lg"
-                          >
-                            <Github className="w-5 h-5" />
-                            View on GitHub
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
-
-                          <button
-                            disabled
-                            className="flex items-center justify-center gap-3 w-full px-6 py-4 rounded-xl bg-white/10 text-white/50 font-semibold cursor-not-allowed backdrop-blur-sm"
-                          >
-                            <Store className="w-5 h-5" />
-                            Play Store (Coming Soon)
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
           </div>
 
           {/* More Projects CTA */}
           <div className="text-center mt-16">
-            <p className="text-muted-foreground mb-4">
-              More exciting projects in the pipeline!
-            </p>
+            <p className="text-muted-foreground mb-4">More exciting projects in the pipeline!</p>
             <Button variant="outline" asChild>
-              
-                href="https://github.com/EduGoon"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1"
-              >
+              <a href="https://github.com/EduGoon" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
                 <Github className="w-4 h-4" />
                 View GitHub Profile
               </a>
             </Button>
           </div>
         </div>
+      </div>
+
+      {/* Modal Overlay - Outside the map loop */}
+      {activeProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={() => setActiveProject(null)}>
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
+          
+          <div className="relative z-10 w-full max-w-md" onClick={(e) => e.stopPropagation()}>
+            <div className={`relative p-8 rounded-3xl bg-gradient-to-br ${activeProject.gradient} shadow-2xl`}>
+              <button onClick={() => setActiveProject(null)} className="absolute top-4 right-4 p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors">
+                <X className="w-5 h-5 text-white" />
+              </button>
+
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <activeProject.icon className="w-10 h-10 text-white" />
+                </div>
+              </div>
+
+              <h3 className="text-3xl font-bold text-white text-center mb-2">{activeProject.title}</h3>
+              <p className="text-white/90 text-center mb-8">{activeProject.tagline}</p>
+
+              <div className="space-y-3">
+                <a href={activeProject.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 w-full px-6 py-4 rounded-xl bg-white text-gray-900 font-semibold hover:bg-white/90 transition-all transform hover:scale-105 shadow-lg">
+                  <Github className="w-5 h-5" />
+                  View on GitHub
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+
+                <button disabled className="flex items-center justify-center gap-3 w-full px-6 py-4 rounded-xl bg-white/10 text-white/50 font-semibold cursor-not-allowed backdrop-blur-sm">
+                  <Store className="w-5 h-5" />
+                  Play Store (Coming Soon)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};
       </div>
     </section>
   );
