@@ -202,7 +202,3 @@ export const Projects = () => {
     </section>
   );
 };
-      </div>
-    </section>
-  );
-};
