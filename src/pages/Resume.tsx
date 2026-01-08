@@ -42,14 +42,14 @@ const Resume = () => {
 
               {/* Contact Info */}
               <div className="flex flex-wrap gap-4 text-sm text-muted-foreground print:text-gray-600">
-                
+                <a
                   href="mailto:mwangiedwin131@gmail.com"
                   className="flex items-center gap-1 hover:text-primary print:text-gray-600"
                 >
                   <Mail className="w-4 h-4" />
                   mwangiedwin131@gmail.com
                 </a>
-                
+                <a
                   href="tel:+254706672014"
                   className="flex items-center gap-1 hover:text-primary print:text-gray-600"
                 >
@@ -63,7 +63,7 @@ const Resume = () => {
               </div>
 
               <div className="flex gap-4 mt-3 text-sm text-muted-foreground print:text-gray-600">
-                
+                <a
                   href="https://github.com/EduGoon"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -72,7 +72,7 @@ const Resume = () => {
                   <Github className="w-4 h-4" />
                   github.com/EduGoon
                 </a>
-                
+                <a
                   href="https://www.linkedin.com/in/edwin-mwangi-263481270/"
                   target="_blank"
                   rel="noopener noreferrer"
