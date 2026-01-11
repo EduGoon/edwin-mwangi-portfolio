@@ -70,7 +70,7 @@ export const Hero = () => {
             <Button variant="outline" size="lg" asChild>
               <Link to="/resume" className="flex items-center gap-2">
                 <FileText className="w-4 h-4" />
-                Download Resume
+                View Resume
               </Link>
             </Button>
           </div>
