@@ -177,7 +177,7 @@ const Resume = () => {
               <h2 className="text-lg font-bold uppercase tracking-wide text-foreground print:text-black border-b border-border print:border-gray-400 pb-2 mb-3">
                 Education
               </h2>
-              <div className="flex justify-between items-start mb-2">
+              <div className="flex justify-between items-start">
                 <div>
                   <h3 className="font-semibold text-foreground print:text-black">BSc Computer Technology</h3>
                   <p className="text-muted-foreground print:text-gray-700">
@@ -188,9 +188,6 @@ const Resume = () => {
                   2022 – Present
                 </span>
               </div>
-              <p className="text-sm italic text-muted-foreground print:text-gray-600">
-                (Education listed for completeness only)
-              </p>
             </section>
 
             {/* Availability */}
