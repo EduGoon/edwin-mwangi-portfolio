@@ -1,5 +1,5 @@
 import { Code2, Lightbulb, Rocket, GraduationCap } from "lucide-react";
-
+ 
 const highlights = [
   {
     icon: Code2,
@@ -22,7 +22,7 @@ const highlights = [
     description: "Pursuing BSc Computer Technology with a strong passion for building real-world software systems.",
   },
 ];
-
+ 
 export const About = () => {
   return (
     <section id="about" className="py-24 md:py-32 relative">
@@ -38,7 +38,7 @@ export const About = () => {
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full" />
           </div>
-
+ 
           {/* Main Content */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="space-y-6">
@@ -55,12 +55,16 @@ export const About = () => {
                 patterns and multi-modular codebase management for maintainable, scalable apps.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Beyond mobile development, I build and maintain <span className="text-foreground font-medium">backend systems</span> 
-                using Node.js and the Firebase ecosystem. I focus on authentication, real-time data, and scalable APIs that 
-                power mobile applications end-to-end.
+                Beyond mobile, I build <span className="text-foreground font-medium">full-stack web platforms</span> — 
+                from <span className="text-primary">React</span> frontends to 
+                <span className="text-primary"> Node.js</span> backends backed by 
+                <span className="text-primary"> PostgreSQL</span> and deployed on 
+                <span className="text-primary"> Google Cloud</span>. My latest project, 
+                <span className="text-foreground font-medium"> SparkVybzEnt</span>, is a live events 
+                ticketing platform built for the Kenyan market.
               </p>
             </div>
-
+ 
             {/* Highlights Grid */}
             <div className="grid sm:grid-cols-2 gap-4">
               {highlights.map((item, index) => (
@@ -78,14 +82,14 @@ export const About = () => {
               ))}
             </div>
           </div>
-
+ 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { value: "2+", label: "Apps Built" },
+              { value: "3+", label: "Projects Shipped" },
               { value: "3rd", label: "Year Student" },
-              { value: "Android App", label: "Developer" },
-              { value: "Backend", label: "Developer" },
+              { value: "Android", label: "Developer" },
+              { value: "Full-Stack", label: "Web Developer" },
               { value: "∞", label: "Learning Hours" },
             ].map((stat) => (
               <div
