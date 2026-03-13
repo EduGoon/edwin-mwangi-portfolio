@@ -3,9 +3,9 @@ import {
   Server, 
   Cloud, 
   Layers,
-  Code2
+  Globe
 } from "lucide-react";
-
+ 
 const skillCategories = [
   {
     title: "Mobile Development",
@@ -19,32 +19,37 @@ const skillCategories = [
       "Responsive Design",
       "Android Studio",
       "Gradle",
-      "Google Play Services"
+      "Google Play Services",
     ],
   },
   {
-    title: "Backend Development",
+    title: "Backend & Web",
     icon: Server,
     skills: [
       "Node.js",
+      "TypeScript",
       "RESTful APIs",
-      "JavaScript/TypeScript",
+      "React",
+      "PostgreSQL",
+      "Prisma ORM",
       "Web Crawling",
       "Cloud Functions",
       "Cloud Run",
-      "Server-side Architecture"
+      "Server-side Architecture",
     ],
   },
   {
     title: "Firebase & Cloud",
     icon: Cloud,
     skills: [
-      "Authentication",
+      "Firebase Auth",
       "Firestore",
       "Cloud Storage",
       "FCM (Push Notifications)",
+      "Google Cloud Platform",
+      "Vercel",
       "Analytics",
-      "Google OAuth"
+      "Google OAuth",
     ],
   },
   {
@@ -52,15 +57,25 @@ const skillCategories = [
     icon: Layers,
     skills: [
       "Multi-Module Architecture",
-      "Dependency Injection (Hilt/Dagger)",
+      "Dependency Injection (Hilt)",
       "Repository Pattern",
       "Coroutines & Flow",
       "Unit Testing",
-      "UI Testing"
+      "UI Testing",
+    ],
+  },
+  {
+    title: "AI & Emerging Tech",
+    icon: Globe,
+    skills: [
+      "AI-assisted Development",
+      "LLM Integration",
+      "Prompt Engineering",
+      "AI Code Review",
     ],
   },
 ];
-
+ 
 export const Skills = () => {
   return (
     <section id="skills" className="py-24 md:py-32 relative">
@@ -73,37 +88,39 @@ export const Skills = () => {
               My <span className="text-gradient">Tech Arsenal</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Core skills and technologies I work with, categorized for clarity and separation of concerns.
+              Core skills and technologies I work with, from mobile to full-stack web, cloud infrastructure, and AI-assisted development.
             </p>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mt-6" />
           </div>
-
-          {/* Skills Grid */}
+ 
+          {/* Skills Grid — 2 cols, last card centered if odd */}
           <div className="grid md:grid-cols-2 gap-6">
-            {skillCategories.map((category) => (
-              <div
-                key={category.title}
-                className="p-6 rounded-2xl bg-gradient-card border border-border hover:border-primary/30 transition-all duration-300"
-              >
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <category.icon className="w-5 h-5 text-primary" />
+            {skillCategories.map((category, index) => {
+              const isLastOdd = index === skillCategories.length - 1 && skillCategories.length % 2 !== 0;
+              return (
+                <div
+                  key={category.title}
+                  className={`p-6 rounded-2xl bg-gradient-card border border-border hover:border-primary/30 transition-all duration-300 ${isLastOdd ? "md:col-span-2 md:max-w-lg md:mx-auto md:w-full" : ""}`}
+                >
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <category.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-semibold text-lg">{category.title}</h3>
                   </div>
-                  <h3 className="font-semibold text-lg">{category.title}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1.5 text-sm font-medium rounded-lg bg-secondary/50 border border-border hover:border-primary hover:text-primary transition-all duration-300"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1.5 text-sm font-medium rounded-lg bg-secondary/50 border border-border hover:border-primary hover:text-primary transition-all duration-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
