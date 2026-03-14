@@ -20,8 +20,8 @@ import {
  
 const projects = [
   {
-    id: "sparkvybzent",
-    title: "SparkVybzEnt",
+    id: "TketEnt",
+    title: "TketEnt",
     tagline: "Kenya's #1 Events & Culture Platform",
     description:
       "A full-stack events ticketing and discovery platform built for the Kenyan market. Users can browse events, purchase tickets, read editorial content from local writers, and manage their bookings — all in one dark, luxury-styled web experience.",
@@ -43,7 +43,7 @@ const projects = [
       "Cloud Storage",
       "Vercel",
     ],
-    liveUrl: "https://spark-vybz-ent.vercel.app",
+    liveUrl: "https://tket-ent.vercel.app",
     githubUrl: null,
     status: "Live",
   },
