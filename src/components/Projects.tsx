@@ -43,7 +43,7 @@ const projects = [
       "Cloud Storage",
       "Vercel",
     ],
-    liveUrl: "https://tket-ent.vercel.app",
+    liveUrl: "https://tketent.space",
     githubUrl: null,
     status: "Live",
   },
